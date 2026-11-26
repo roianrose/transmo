@@ -1,0 +1,35 @@
+.ticket-screen { min-height:100dvh; max-width:720px; margin:0 auto; padding:24px 24px 42px; position:relative; overflow:hidden; background:radial-gradient(ellipse at center,#58602c 0%,#41491d 75%); color:#422a12; font-family:Arial,Helvetica,sans-serif; display:flex; flex-direction:column; }
+.ticket-status-bar { height:92px; flex:none; display:grid; grid-template-columns:1fr 1.1fr 1fr; align-items:start; padding:10px 24px; color:#fff; font-size:24px; font-weight:700; }
+.ticket-dynamic-island { width:160px; height:48px; margin:auto; border-radius:30px; background:#050505; }
+.ticket-status-symbols { text-align:right; letter-spacing:2px; }
+.ticket-card { flex:1; min-height:650px; position:relative; border-radius:48px; background:linear-gradient(145deg,#fffaf0,#f4e9d8); padding:28px 34px 30px; box-shadow:0 12px 35px #17170966; display:flex; flex-direction:column; }
+.ticket-brand { color:#422a12; font-size:54px; font-weight:900; letter-spacing:-3px; margin-bottom:44px; }
+.ticket-transport { display:flex; align-items:center; justify-content:center; gap:30px; min-height:112px; }
+.ticket-transport-icon { width:94px; height:94px; border-radius:32px; background:#646b32; display:grid; place-items:center; }
+.ticket-transport-icon svg { width:62px; height:62px; fill:#fff9ed; }
+.ticket-transport-icon .ticket-icon-cutout { fill:#646b32; }
+.ticket-divider { width:2px; height:100px; background:#b9a58b; }
+.ticket-transport h1 { font-size:42px; line-height:1; margin:0 0 8px; color:#422a12; }
+.ticket-transport p { font-size:28px; margin:0; color:#422a12; }
+.ticket-rule { height:2px; background:#b9a58b; width:100%; margin:34px 0; }
+.ticket-qr-wrap { flex:1; min-height:220px; display:grid; place-items:center; }
+.ticket-qr { width:min(66vw,390px); max-width:100%; max-height:390px; height:auto; fill:#080808; shape-rendering:crispEdges; }
+.ticket-qr .qr-white { fill:#fffaf0; }
+.ticket-lower-rule { margin:28px 0 22px; }
+.ticket-code { text-align:center; }
+.ticket-code p { font-size:22px; margin:0 0 12px; }
+.ticket-code strong { display:inline-block; background:#eadcc7; border-radius:40px; padding:8px 34px; font-size:36px; letter-spacing:1px; }
+.ticket-train-art { position:relative; height:110px; margin:46px -34px -30px; overflow:hidden; display:flex; align-items:flex-end; padding:0 18px 22px; }
+.ticket-wire { position:absolute; left:0; right:0; top:28px; border-top:4px solid #422a12; }
+.ticket-wire:before,.ticket-wire:after { content:''; position:absolute; top:-25px; width:6px; height:52px; background:#422a12; box-shadow:7px 5px 0 -2px #422a12; }
+.ticket-wire:before { left:14%; }.ticket-wire:after { right:14%; }
+.ticket-train { z-index:1; width:100%; height:43px; border:5px solid #422a12; border-radius:28px 28px 12px 12px; background:#f7ecd9; display:flex; align-items:center; justify-content:space-evenly; gap:5px; padding:7px 12px; }
+.ticket-train:before { content:''; position:absolute; left:12px; bottom:22px; width:38px; height:22px; background:#422a12; border-radius:24px 5px 5px 4px; }
+.ticket-train i { width:9%; height:13px; border-radius:4px; background:#422a12; }
+.ticket-rails { position:absolute; left:0; right:0; bottom:9px; border-top:5px solid #422a12; box-shadow:0 8px 0 #422a12; }
+.ticket-used { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:24px; }
+.ticket-used-mark { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:#646b32; color:#fff; font-size:54px; }
+.ticket-used h2 { font-size:32px; margin:22px 0 8px; }.ticket-used p { font-size:20px; line-height:1.45; max-width:300px; }
+.ticket-close { margin-top:22px; min-height:52px; border:0; border-radius:30px; background:#646b32; color:white; font-size:18px; font-weight:800; }
+.ticket-home-indicator { width:130px; height:6px; border-radius:5px; background:#080808; margin:22px auto 0; flex:none; }
+@media(max-width:480px) { .ticket-screen{padding:18px 18px 30px}.ticket-status-bar{height:78px;font-size:19px;padding:8px 10px}.ticket-dynamic-island{width:128px;height:40px}.ticket-card{padding:24px 24px 26px;border-radius:38px;min-height:620px}.ticket-brand{font-size:46px;margin-bottom:32px}.ticket-transport{gap:20px;min-height:94px}.ticket-transport-icon{width:78px;height:78px;border-radius:26px}.ticket-transport-icon svg{width:54px;height:54px}.ticket-divider{height:82px}.ticket-transport h1{font-size:34px}.ticket-transport p{font-size:22px}.ticket-rule{margin:26px 0}.ticket-qr{width:min(70vw,340px)}.ticket-code p{font-size:19px}.ticket-code strong{font-size:29px;padding:8px 26px}.ticket-train-art{margin-left:-24px;margin-right:-24px;margin-bottom:-26px;height:90px}.ticket-used h2{font-size:28px}.ticket-used p{font-size:18px} }
