@@ -1,0 +1,98 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4a3928;
+  background: #e9e6e1;
+  font-synthesis: none;
+}
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.app-shell {
+  min-height: 100dvh;
+  background: #f7f2eb;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.home { min-height: 100dvh; padding: 20px 32px 138px; }
+.top-status { height: 74px; display: flex; align-items: center; justify-content: space-between; }
+.time { font-size: 36px; font-weight: 800; letter-spacing: -1px; }
+.status-island { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: 390px; height: 70px; border-radius: 36px; background: #080b19; }
+.status-island::before { content: ''; position: absolute; left: 38px; top: 18px; width: 44px; height: 44px; border-radius: 12px; background: repeating-linear-gradient(90deg,#777 0 8px,#aaa 8px 10px); }
+.status-icons { z-index: 1; display: flex; align-items: center; gap: 14px; color: #080b19; font-size: 42px; }
+.status-icons .wifi { transform: rotate(45deg) scaleX(.8); }
+.status-icons .battery { width: 51px; height: 28px; border: 4px solid #080b19; border-radius: 8px; position: relative; }
+.status-icons .battery::after { content: ''; position: absolute; right: -9px; top: 7px; width: 5px; height: 9px; background: #080b19; border-radius: 0 3px 3px 0; }
+.welcome { margin-top: 12px; }
+.welcome h1 { margin: 0 0 50px; font-size: 54px; line-height: 1; letter-spacing: -2px; }
+.welcome p { margin: 0 0 14px; font-size: 29px; font-weight: 700; }
+.balance-row { display: flex; align-items: flex-end; gap: 10px; }
+.balance-row strong { font-size: 68px; line-height: .9; letter-spacing: -3px; }
+.balance-row span { font-size: 27px; font-weight: 800; padding-bottom: 5px; }
+.add-button { margin-left: 22px; width: 82px; height: 82px; border: 0; border-radius: 50%; background: #546321; color: #fff; font-size: 62px; line-height: 70px; }
+.mode-switch { height: 118px; margin-top: 58px; border-radius: 58px; background: #fff; display: grid; grid-template-columns: 1fr 1fr; padding: 10px; box-shadow: 0 1px 0 rgba(74,57,40,.03); }
+.mode-switch button { border: 0; background: transparent; border-radius: 48px; color: #3d3024; font-size: 29px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 18px; }
+.mode-switch button.active { background: #546321; color: #fff; }
+.mode-switch svg { width: 48px; height: 48px; }
+.ticket-card { margin-top: 58px; min-height: 610px; border-radius: 52px; background: #fff; padding: 28px 30px 32px; border: 1px solid #eee8df; box-shadow: 0 4px 0 rgba(74,57,40,.06); }
+.train { width: 100%; height: 190px; display: block; }
+.ticket-card h2 { text-align: center; font-size: 42px; margin: 0 0 38px; letter-spacing: -1px; }
+.transport-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.transport-grid button { height: 188px; border: 0; border-radius: 28px; background: #f7f3eb; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.transport-grid button.selected { background: #ede8df; }
+.transport-grid svg { width: 72px; height: 72px; margin-bottom: 12px; }
+.transport-grid span { font-size: 29px; font-weight: 900; }
+.buy-button { width: 100%; height: 108px; border: 0; border-radius: 54px; background: #546321; color: #fff; font-size: 34px; font-weight: 900; margin-top: 34px; }
+.search-box { height: 112px; margin-top: 58px; border: 2px solid #e2dcd2; border-radius: 58px; background: #fff; display: flex; align-items: center; padding: 8px 10px 8px 48px; }
+.search-box span { flex: 1; font-size: 28px; font-weight: 800; white-space: nowrap; }
+.search-box button { width: 112px; height: 92px; border: 0; border-radius: 42px; background: #546321; color: #fff; display: grid; place-items: center; }
+.search-box svg { width: 56px; }
+.bottom-nav { position: absolute; left: 0; right: 0; bottom: 24px; height: 136px; border-radius: 64px 64px 0 0; background: #fff; display: grid; grid-template-columns: repeat(4,1fr); padding: 18px 18px 12px; border: 1px solid #eee8df; }
+.bottom-nav button { border: 0; background: transparent; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.bottom-nav button.active { color: #546321; }
+.bottom-nav svg { width: 52px; height: 52px; }
+.bottom-nav span { font-size: 21px; font-weight: 900; }
+.home-indicator { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 310px; height: 9px; border-radius: 5px; background: #080b19; }
+
+@media (max-width: 520px) {
+  .home { padding: 14px 28px 126px; }
+  .top-status { height: 64px; }
+  .time { font-size: 29px; }
+  .status-island { width: 330px; height: 58px; top: 14px; }
+  .status-island::before { width: 34px; height: 34px; left: 30px; top: 12px; }
+  .status-icons { font-size: 30px; gap: 8px; }
+  .status-icons .battery { width: 42px; height: 24px; }
+  .welcome { margin-top: 40px; }
+  .welcome h1 { font-size: 48px; margin-bottom: 48px; }
+  .welcome p { font-size: 25px; }
+  .balance-row strong { font-size: 60px; }
+  .balance-row span { font-size: 24px; }
+  .add-button { width: 72px; height: 72px; font-size: 54px; margin-left: 8px; }
+  .mode-switch { margin-top: 48px; height: 104px; }
+  .mode-switch button { font-size: 24px; }
+  .ticket-card { margin-top: 48px; min-height: 520px; padding: 18px 22px 24px; }
+  .train { height: 150px; }
+  .ticket-card h2 { font-size: 34px; margin: 0 0 26px; }
+  .transport-grid { gap: 11px; }
+  .transport-grid button { height: 150px; }
+  .transport-grid svg { width: 58px; height: 58px; }
+  .transport-grid span { font-size: 24px; }
+  .buy-button { height: 82px; margin-top: 26px; font-size: 28px; }
+  .search-box { height: 92px; margin-top: 48px; padding-left: 36px; }
+  .search-box span { font-size: 22px; }
+  .search-box button { width: 92px; height: 74px; }
+  .bottom-nav { height: 116px; bottom: 18px; }
+  .bottom-nav svg { width: 44px; height: 44px; }
+  .bottom-nav span { font-size: 17px; }
+  .home-indicator { bottom: 8px; width: 250px; height: 7px; }
+}
+
+@media (max-width: 380px) {
+  .home { padding-inline: 18px; }
+  .welcome h1 { font-size: 42px; }
+  .search-box span { font-size: 18px; }
+  .mode-switch button { font-size: 20px; gap: 8px; }
+  .transport-grid span { font-size: 20px; }
+}
