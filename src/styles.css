@@ -2,55 +2,28 @@
 :root { font-family: Arial, Helvetica, sans-serif; color: #4a3928; background: #e8e5df; }
 body { margin: 0; min-width: 320px; }
 button { font: inherit; cursor: pointer; }
-.wallet-shell { min-height: 100dvh; max-width: 720px; margin: 0 auto; background: #f7f2eb; position: relative; overflow: hidden; padding-bottom: 145px; }
-.wallet-status { height: 104px; display: flex; align-items: center; justify-content: space-between; padding: 14px 34px 0; position: relative; }
-.wallet-status > span { font-size: 34px; font-weight: 800; z-index: 2; }
-.wallet-status-island { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: 390px; height: 70px; border-radius: 36px; background: #080b19; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; color: #f7f4ec; }
-.island-bus { width: 38px; height: 38px; border-radius: 8px; background: #eee9df; color: #080b19; display: grid; place-items: center; overflow: hidden; }
-.island-signal { font-size: 18px; letter-spacing: 2px; }
-.wallet-status-right { z-index: 2; display: flex; align-items: center; gap: 12px; }
-.wallet-status-right .wifi { font-size: 24px; }
-.battery { width: 48px; height: 26px; border: 4px solid #080b19; border-radius: 8px; }
-.wallet-main { padding: 20px 32px 0; }
-.wallet-main h1 { margin: 62px 0 38px; font-size: 58px; line-height: 1; letter-spacing: -2px; }
-.balance-card { height: 310px; position: relative; border-radius: 44px; background: #fff; border: 1px solid #eee8df; overflow: hidden; box-shadow: 0 3px 0 rgba(74,57,40,.04); }
-.balance-copy { position: absolute; left: 38px; top: 42px; z-index: 2; }
-.balance-copy p { margin: 0 0 18px; font-size: 29px; font-weight: 800; }
-.balance-copy strong { font-size: 62px; line-height: 1; letter-spacing: -2px; }
-.balance-copy strong span { font-size: 34px; }
-.balance-brand { position: absolute; right: 34px; top: 36px; font-size: 56px; font-weight: 900; letter-spacing: -3px; }
-.wallet-train { position: absolute; left: 0; right: 0; bottom: 5px; width: 100%; height: 130px; }
-.wallet-actions { height: 190px; margin: 38px 0 28px; display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
-.wallet-actions button { border: 0; border-radius: 30px; background: #fff; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 2px 0 rgba(74,57,40,.04); }
-.wallet-actions svg { width: 72px; height: 72px; margin-bottom: 12px; }
-.wallet-actions span { font-size: 26px; font-weight: 800; line-height: 1.15; }
-.wallet-shortcuts { height: 118px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-.wallet-shortcuts button { border: 0; border-radius: 34px; background: #fff; color: #4a3928; display: grid; grid-template-columns: 64px 1fr 34px; align-items: center; text-align: left; padding: 20px 24px; }
-.wallet-shortcuts svg { width: 52px; height: 52px; }
-.wallet-shortcuts strong { font-size: 26px; line-height: 1.05; }
-.wallet-shortcuts b { font-size: 44px; text-align: right; }
-.movements { margin-top: 54px; }
-.movements-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
-.movements-header h2 { margin: 0; font-size: 42px; letter-spacing: -1px; }
-.movements-header button { border: 0; background: transparent; color: #4a3928; font-size: 28px; }
-.movements-header button span { margin-left: 10px; font-size: 22px; }
-.movement-list { display: flex; flex-direction: column; gap: 12px; }
-.movement-list article { height: 140px; border-radius: 28px; background: #fff; display: grid; grid-template-columns: 92px 82px 1fr 205px; align-items: center; padding: 14px 24px 14px 16px; }
-.movement-date { height: 90px; border-right: 2px solid #d9d3ca; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.movement-date strong { font-size: 36px; line-height: 1; }.movement-date span { font-size: 24px; margin-top: 8px; }
-.movement-icon { display: grid; place-items: center; }.movement-icon svg { width: 58px; height: 58px; }
-.movement-copy { display: flex; flex-direction: column; }.movement-copy strong { font-size: 25px; }.movement-copy span { font-size: 22px; line-height: 1.15; }
-.movement-amount { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }.movement-amount strong { font-size: 24px; }.movement-amount strong.positive { color: #718b42; }.movement-amount strong.negative { color: #b64b44; }.movement-amount span { background: #dce9b9; color: #4a3928; border-radius: 22px; padding: 8px 16px; font-size: 20px; font-weight: 800; }
-.wallet-nav { position: absolute; left: 0; right: 0; bottom: 20px; height: 118px; background: #fff; border-radius: 58px 58px 0 0; display: grid; grid-template-columns: repeat(4,1fr); padding: 12px 18px 8px; }
-.wallet-nav button { border: 0; background: transparent; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }.wallet-nav button.active { color: #718b42; }.wallet-nav svg { width: 48px; height: 48px; }.wallet-nav span { font-size: 18px; font-weight: 900; }
+.user-shell { min-height: 100dvh; max-width: 720px; margin: 0 auto; background: #f7f2eb; position: relative; overflow: hidden; padding-bottom: 150px; }
+.user-status { height: 104px; display: flex; align-items: center; justify-content: space-between; padding: 14px 34px 0; position: relative; }
+.user-status > span { font-size: 34px; font-weight: 800; z-index: 2; }
+.user-status-island { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: 390px; height: 70px; border-radius: 36px; background: #080b19; display: flex; align-items: center; justify-content: space-between; padding: 0 29px; color: #f7f4ec; }
+.user-status-island span { font-size: 24px; }.user-status-island b { letter-spacing: 4px; }
+.user-status-icons { z-index: 2; display: flex; align-items: center; gap: 14px; }.user-status-icons span { font-size: 24px; }.user-status-icons i { width: 48px; height: 26px; border: 4px solid #080b19; border-radius: 8px; }
+.user-main { padding: 20px 32px 0; }.user-main h1 { margin: 62px 0 38px; font-size: 58px; line-height: 1; letter-spacing: -2px; }
+.profile-card { height: 210px; background: #fff; border: 1px solid #eee8df; border-radius: 44px; display: grid; grid-template-columns: 170px 1fr 150px; align-items: center; padding: 24px 28px 24px 24px; box-shadow: 0 3px 0 rgba(74,57,40,.04); }
+.avatar { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; }.avatar svg { width: 100%; height: 100%; }
+.profile-copy h2 { margin: 0 0 12px; font-size: 40px; letter-spacing: -1px; }.profile-copy p { margin: 0; font-size: 21px; }
+.profile-edit { height: 66px; border: 0; border-radius: 33px; background: #718b42; color: #fff; font-size: 22px; font-weight: 900; }
+.account-summary { height: 150px; margin: 28px 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }.account-summary button { border: 0; border-radius: 34px; background: #fff; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; }.account-summary strong { color: #718b42; font-size: 48px; line-height: 1; }.account-summary span { margin-top: 12px; font-size: 21px; font-weight: 800; }
+.user-menu { display: flex; flex-direction: column; gap: 12px; }.user-menu button { height: 112px; border: 0; border-radius: 30px; background: #fff; color: #4a3928; display: grid; grid-template-columns: 72px 1fr 46px; align-items: center; padding: 18px 22px; text-align: left; }.menu-icon { width: 62px; height: 62px; border-radius: 50%; background: #ede8df; display: grid; place-items: center; }.menu-icon svg { width: 38px; height: 38px; }.user-menu strong { font-size: 26px; }.menu-chevron { display: grid; place-items: center; }.menu-chevron svg { width: 38px; height: 38px; }
+.logout-button { width: 100%; height: 96px; margin-top: 26px; border: 0; border-radius: 30px; background: #63362a; color: #fff; font-size: 30px; font-weight: 900; }.notice-toast { position: absolute; left: 50%; bottom: 145px; transform: translateX(-50%); background: #4a3928; color: #fff; border-radius: 24px; padding: 14px 24px; font-size: 20px; z-index: 5; }
+.wallet-nav { position: absolute; left: 0; right: 0; bottom: 20px; height: 118px; background: #fff; border-radius: 58px 58px 0 0; display: grid; grid-template-columns: repeat(4,1fr); padding: 12px 18px 8px; }.wallet-nav button { border: 0; background: transparent; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }.wallet-nav button.active { color: #718b42; }.wallet-nav svg { width: 48px; height: 48px; }.wallet-nav span { font-size: 18px; font-weight: 900; }
 .home-indicator { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 310px; height: 9px; border-radius: 5px; background: #080b19; }
 
 @media (max-width: 520px) {
-  .wallet-status { height: 88px; padding-inline: 28px; }.wallet-status > span { font-size: 28px; }.wallet-status-island { width: 330px; height: 58px; top: 14px; }.battery { width: 42px; height: 24px; }
-  .wallet-main { padding-inline: 26px; }.wallet-main h1 { margin: 52px 0 30px; font-size: 48px; }.balance-card { height: 250px; border-radius: 36px; }.balance-copy { left: 28px; top: 34px; }.balance-copy p { font-size: 24px; }.balance-copy strong { font-size: 52px; }.balance-copy strong span { font-size: 28px; }.balance-brand { right: 26px; font-size: 44px; }.wallet-train { height: 112px; }
-  .wallet-actions { height: 150px; margin: 28px 0 22px; gap: 14px; }.wallet-actions svg { width: 58px; height: 58px; }.wallet-actions span { font-size: 21px; }.wallet-shortcuts { height: 96px; gap: 14px; }.wallet-shortcuts button { grid-template-columns: 48px 1fr 24px; padding: 14px 16px; }.wallet-shortcuts svg { width: 42px; height: 42px; }.wallet-shortcuts strong { font-size: 20px; }
-  .movements { margin-top: 42px; }.movements-header h2 { font-size: 34px; }.movements-header button { font-size: 22px; }.movement-list article { height: 116px; grid-template-columns: 72px 66px 1fr 170px; padding-right: 16px; }.movement-date strong { font-size: 30px; }.movement-date span { font-size: 20px; }.movement-icon svg { width: 48px; }.movement-copy strong { font-size: 20px; }.movement-copy span { font-size: 18px; }.movement-amount strong { font-size: 19px; }.movement-amount span { font-size: 16px; }
+  .user-status { height: 88px; padding-inline: 28px; }.user-status > span { font-size: 28px; }.user-status-island { width: 330px; height: 58px; top: 14px; }.user-status-icons i { width: 42px; height: 24px; }
+  .user-main { padding-inline: 26px; }.user-main h1 { margin: 52px 0 30px; font-size: 48px; }.profile-card { height: 170px; grid-template-columns: 118px 1fr 120px; border-radius: 36px; padding: 18px; }.avatar { width: 118px; height: 118px; }.profile-copy h2 { font-size: 31px; }.profile-copy p { font-size: 17px; }.profile-edit { height: 54px; font-size: 18px; }
+  .account-summary { height: 122px; margin: 22px 0; gap: 12px; }.account-summary strong { font-size: 40px; }.account-summary span { font-size: 17px; }.user-menu button { height: 92px; grid-template-columns: 58px 1fr 38px; padding: 14px 16px; }.menu-icon { width: 52px; height: 52px; }.menu-icon svg { width: 32px; height: 32px; }.user-menu strong { font-size: 21px; }.logout-button { height: 82px; font-size: 26px; }
   .wallet-nav { height: 100px; }.wallet-nav svg { width: 40px; height: 40px; }.wallet-nav span { font-size: 16px; }.home-indicator { width: 250px; height: 7px; }
 }
 
-@media (max-width: 380px) { .wallet-main { padding-inline: 18px; }.wallet-actions { gap: 8px; }.wallet-actions span { font-size: 18px; }.wallet-shortcuts strong { font-size: 17px; }.movement-list article { grid-template-columns: 62px 58px 1fr 150px; }.movement-copy strong { font-size: 17px; }.movement-copy span { font-size: 16px; }.movement-amount strong { font-size: 16px; } }
+@media (max-width: 380px) { .user-main { padding-inline: 18px; }.profile-card { grid-template-columns: 105px 1fr 102px; }.avatar { width: 100px; height: 100px; }.profile-copy h2 { font-size: 26px; }.profile-copy p { font-size: 14px; }.profile-edit { font-size: 16px; }.account-summary span { font-size: 14px; }.user-menu strong { font-size: 18px; } }

@@ -1,115 +1,95 @@
 import { useState } from 'react'
 
-function StatusBar({ icon = 'bus' }: { icon?: 'bus' | 'train' }) {
+function StatusBar() {
   return (
-    <header className="wallet-status">
+    <header className="user-status">
       <span>2:34</span>
-      <div className="wallet-status-island">
-        {icon === 'bus' ? <span className="island-bus">▰</span> : <span className="island-train">▰</span>}
-        <div className="island-signal">▮▮</div>
-      </div>
-      <div className="wallet-status-right"><span className="wifi">◉</span><span className="battery" /></div>
+      <div className="user-status-island"><span>▰</span><b>••</b></div>
+      <div className="user-status-icons"><span>◉</span><i /></div>
     </header>
   )
 }
 
-function TrainIllustration() {
-  return (
-    <svg className="wallet-train" viewBox="0 0 620 130" fill="none" aria-label="Tren TRANSMO" role="img">
-      <g stroke="#4a3928" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 35h580M125 35v72M265 35v72M405 35v72M548 35v72M100 35l25 25M240 35l25 25M380 35l25 25M523 35l25 25" strokeWidth="4" />
-        <path d="M55 104h510M50 114h520" strokeWidth="6" />
-        <rect x="95" y="73" width="405" height="39" rx="18" fill="#f7f2eb" strokeWidth="6" />
-        <path d="M76 104l54-31h280l67 31M112 104v8M487 104v8" strokeWidth="7" />
-        <g fill="#4a3928"><rect x="120" y="82" width="55" height="21" rx="4"/><rect x="182" y="82" width="55" height="21" rx="4"/><rect x="244" y="82" width="55" height="21" rx="4"/><rect x="306" y="82" width="55" height="21" rx="4"/><rect x="368" y="82" width="55" height="21" rx="4"/><rect x="430" y="82" width="48" height="21" rx="4"/></g>
-      </g>
-    </svg>
-  )
-}
-
-function AddIcon() {
-  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="17" stroke="currentColor" strokeWidth="3"/><path d="M24 14v20M14 24h20" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
-}
-
-function TransferIcon() {
-  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 17h27l-7-7M40 31H13l7 7M35 17l5-5M13 31l-5 5" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
-}
-
-function QRIcon() {
-  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 18V8h10M30 8h10v10M40 30v10H30M18 40H8V30M13 13h5v5h-5zM30 13h5v5h-5zM13 30h5v5h-5zM24 24h5v5h-5zM32 24h5v5h-5zM24 32h5v5h-5z" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="round" /></svg>
+function Chevron() {
+  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M18 10l14 14-14 14" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" /></svg>
 }
 
 function CardIcon() {
   return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="5" stroke="currentColor" strokeWidth="4"/><path d="M7 18h34M12 28h10" stroke="currentColor" strokeWidth="4" /></svg>
 }
 
-function TicketIcon() {
-  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 13h34v8a6 6 0 000 12v7H7v-7a6 6 0 000-12zM30 13v27" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+function BellIcon() {
+  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M12 35h24l-4-6V20a8 8 0 00-16 0v9zM20 40h8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
 }
 
-function MovementBus() {
+function LockIcon() {
+  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="10" y="21" width="28" height="20" rx="4" stroke="currentColor" strokeWidth="4"/><path d="M16 21v-5a8 8 0 0116 0v5M24 29v5" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
+}
+
+function HelpIcon() {
+  return <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="17" stroke="currentColor" strokeWidth="4"/><path d="M18 19a6 6 0 1110 5c-3 2-4 3-4 7M24 36v1" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
+}
+
+function BusIcon() {
   return <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="12" y="10" width="40" height="41" rx="7" stroke="currentColor" strokeWidth="5"/><path d="M15 29h34M21 51v6M43 51v6M19 51h26M23 36v8M32 36v8M41 36v8" stroke="currentColor" strokeWidth="5" strokeLinecap="round" /></svg>
 }
 
 export default function App() {
-  const [month, setMonth] = useState('Enero 2026')
-  const movements = [
-    { day: '26', title: 'Recarga de saldo', detail: 'Wallet', time: '10:24 a.m.', amount: '+ $50.00 MXN', positive: true },
-    { day: '25', title: 'Compra de pase', detail: 'TREN (1 pasajero)', time: '02:18 p.m.', amount: '- $30.00 MXN', positive: false },
-    { day: '25', title: 'Compra de pase', detail: 'METRO (2 pasajeros)', time: '01:47 p.m.', amount: '- $16.00 MXN', positive: false },
+  const [notice, setNotice] = useState('')
+  const menuItems = [
+    { label: 'Tarjetas TRANSMO', icon: <CardIcon /> },
+    { label: 'Notificaciones', icon: <BellIcon /> },
+    { label: 'Privacidad y seguridad', icon: <LockIcon /> },
+    { label: 'Ayuda y soporte', icon: <HelpIcon /> },
   ]
 
   return (
-    <div className="wallet-shell">
+    <div className="user-shell">
       <StatusBar />
 
-      <main className="wallet-main">
-        <h1>Wallet</h1>
+      <main className="user-main">
+        <h1>Usuario</h1>
 
-        <section className="balance-card">
-          <div className="balance-copy">
-            <p>Saldo disponible</p>
-            <strong>$0.00 <span>MXN</span></strong>
+        <section className="profile-card">
+          <div className="avatar" aria-label="Foto de perfil">
+            <svg viewBox="0 0 160 160" fill="none" aria-hidden="true">
+              <circle cx="80" cy="80" r="80" fill="#dfe7c9" />
+              <circle cx="80" cy="54" r="27" fill="#75482f" />
+              <path d="M56 50c4-25 43-31 53-6-11-5-24-3-34 3-6 4-12 5-19 3z" fill="#4a3928" />
+              <path d="M38 143c4-34 20-51 42-51s38 17 42 51" fill="#718b42" />
+              <circle cx="69" cy="57" r="3" fill="#4a3928"/><circle cx="91" cy="57" r="3" fill="#4a3928"/>
+              <path d="M69 70c7 6 15 6 22 0" stroke="#4a3928" strokeWidth="3" strokeLinecap="round" />
+            </svg>
           </div>
-          <div className="balance-brand">transmo</div>
-          <TrainIllustration />
+          <div className="profile-copy"><h2>Angel Roiz</h2><p>angel.roiz@transmo.mx</p></div>
+          <button className="profile-edit" onClick={() => setNotice('Perfil')}>Editar perfil</button>
         </section>
 
-        <div className="wallet-actions">
-          <button><AddIcon /><span>Recargar<br />saldo</span></button>
-          <button><TransferIcon /><span>Transferir<br />saldo</span></button>
-          <button><QRIcon /><span>Pagar con<br />QR</span></button>
-        </div>
-
-        <div className="wallet-shortcuts">
-          <button><CardIcon /><strong>Mi tarjeta<br />TRANSMO</strong><b>›</b></button>
-          <button><TicketIcon /><strong>Mis pases<br />digitales</strong><b>›</b></button>
-        </div>
-
-        <section className="movements">
-          <div className="movements-header">
-            <h2>Movimientos</h2>
-            <button onClick={() => setMonth(month === 'Enero 2026' ? 'Febrero 2026' : 'Enero 2026')}>{month} <span>⌄</span></button>
-          </div>
-
-          <div className="movement-list">
-            {movements.map((movement, index) => (
-              <article key={index}>
-                <div className="movement-date"><strong>{movement.day}</strong><span>Ene</span></div>
-                <div className="movement-icon"><MovementBus /></div>
-                <div className="movement-copy"><strong>{movement.title}</strong><span>{movement.detail}</span><span>{movement.time}</span></div>
-                <div className="movement-amount"><strong className={movement.positive ? 'positive' : 'negative'}>{movement.amount}</strong><span>Aprobado</span></div>
-              </article>
-            ))}
-          </div>
+        <section className="account-summary">
+          <button onClick={() => setNotice('Pases digitales')}><strong>3</strong><span>Pases digitales</span></button>
+          <button onClick={() => setNotice('Movimientos')}><strong>12</strong><span>Movimientos</span></button>
+          <button onClick={() => setNotice('Viajes')}><strong>28</strong><span>Viajes</span></button>
         </section>
+
+        <section className="user-menu">
+          {menuItems.map((item) => (
+            <button key={item.label} onClick={() => setNotice(item.label)}>
+              <span className="menu-icon">{item.icon}</span>
+              <strong>{item.label}</strong>
+              <span className="menu-chevron"><Chevron /></span>
+            </button>
+          ))}
+        </section>
+
+        <button className="logout-button" onClick={() => setNotice('Cerrar sesión')}>Cerrar sesión</button>
+        {notice && <div className="notice-toast" role="status">{notice}</div>}
       </main>
 
-      <nav className="wallet-nav" aria-label="Navegación principal">
-        <button><svg viewBox="0 0 64 64" fill="none"><rect x="12" y="10" width="40" height="41" rx="7" stroke="currentColor" strokeWidth="5"/><path d="M15 29h34M21 51v6M43 51v6M19 51h26M23 36v8M32 36v8M41 36v8" stroke="currentColor" strokeWidth="5" strokeLinecap="round" /></svg><span>INICIO</span></button>
+      <nav className="wallet-nav user-nav" aria-label="Navegación principal">
+        <button><BusIcon /><span>INICIO</span></button>
         <button><svg viewBox="0 0 48 48" fill="none"><circle cx="21" cy="21" r="13" stroke="currentColor" strokeWidth="4"/><path d="M31 31l10 10" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg><span>RUTAS</span></button>
-        <button className="active"><svg viewBox="0 0 48 48" fill="none"><path d="M8 15h29a5 5 0 015 5v15H14a7 7 0 010-14h28" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/><path d="M35 27h7" stroke="currentColor" strokeWidth="4" /></svg><span>WALLET</span></button>
-        <button><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="15" r="8" stroke="currentColor" strokeWidth="4"/><path d="M8 42c2-10 8-15 16-15s14 5 16 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg><span>USUARIO</span></button>
+        <button><svg viewBox="0 0 48 48" fill="none"><path d="M8 15h29a5 5 0 015 5v15H14a7 7 0 010-14h28" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/><path d="M35 27h7" stroke="currentColor" strokeWidth="4" /></svg><span>WALLET</span></button>
+        <button className="active"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="15" r="8" stroke="currentColor" strokeWidth="4"/><path d="M8 42c2-10 8-15 16-15s14 5 16 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg><span>USUARIO</span></button>
       </nav>
       <div className="home-indicator" />
     </div>
