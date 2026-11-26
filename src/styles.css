@@ -1,98 +1,83 @@
 * { box-sizing: border-box; }
-:root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #4a3928;
-  background: #e9e6e1;
-  font-synthesis: none;
-}
+:root { font-family: Arial, Helvetica, sans-serif; color: #4a3928; background: #e8e5df; }
 body { margin: 0; min-width: 320px; }
-button, input { font: inherit; }
-button { cursor: pointer; }
-.app-shell {
-  min-height: 100dvh;
-  background: #f7f2eb;
-  max-width: 720px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-.home { min-height: 100dvh; padding: 20px 32px 138px; }
-.top-status { height: 74px; display: flex; align-items: center; justify-content: space-between; }
-.time { font-size: 36px; font-weight: 800; letter-spacing: -1px; }
+button { font: inherit; cursor: pointer; }
+.purchase-shell { min-height: 100dvh; max-width: 720px; margin: 0 auto; background: #f7f2eb; position: relative; overflow: hidden; padding-bottom: 150px; }
+.purchase-status { height: 104px; display: flex; align-items: center; justify-content: space-between; padding: 15px 34px 0; position: relative; }
+.purchase-status .time { font-size: 34px; font-weight: 800; z-index: 2; }
 .status-island { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: 390px; height: 70px; border-radius: 36px; background: #080b19; }
-.status-island::before { content: ''; position: absolute; left: 38px; top: 18px; width: 44px; height: 44px; border-radius: 12px; background: repeating-linear-gradient(90deg,#777 0 8px,#aaa 8px 10px); }
-.status-icons { z-index: 1; display: flex; align-items: center; gap: 14px; color: #080b19; font-size: 42px; }
-.status-icons .wifi { transform: rotate(45deg) scaleX(.8); }
-.status-icons .battery { width: 51px; height: 28px; border: 4px solid #080b19; border-radius: 8px; position: relative; }
-.status-icons .battery::after { content: ''; position: absolute; right: -9px; top: 7px; width: 5px; height: 9px; background: #080b19; border-radius: 0 3px 3px 0; }
-.welcome { margin-top: 12px; }
-.welcome h1 { margin: 0 0 50px; font-size: 54px; line-height: 1; letter-spacing: -2px; }
-.welcome p { margin: 0 0 14px; font-size: 29px; font-weight: 700; }
-.balance-row { display: flex; align-items: flex-end; gap: 10px; }
-.balance-row strong { font-size: 68px; line-height: .9; letter-spacing: -3px; }
-.balance-row span { font-size: 27px; font-weight: 800; padding-bottom: 5px; }
-.add-button { margin-left: 22px; width: 82px; height: 82px; border: 0; border-radius: 50%; background: #546321; color: #fff; font-size: 62px; line-height: 70px; }
-.mode-switch { height: 118px; margin-top: 58px; border-radius: 58px; background: #fff; display: grid; grid-template-columns: 1fr 1fr; padding: 10px; box-shadow: 0 1px 0 rgba(74,57,40,.03); }
-.mode-switch button { border: 0; background: transparent; border-radius: 48px; color: #3d3024; font-size: 29px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 18px; }
-.mode-switch button.active { background: #546321; color: #fff; }
-.mode-switch svg { width: 48px; height: 48px; }
-.ticket-card { margin-top: 58px; min-height: 610px; border-radius: 52px; background: #fff; padding: 28px 30px 32px; border: 1px solid #eee8df; box-shadow: 0 4px 0 rgba(74,57,40,.06); }
-.train { width: 100%; height: 190px; display: block; }
-.ticket-card h2 { text-align: center; font-size: 42px; margin: 0 0 38px; letter-spacing: -1px; }
-.transport-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-.transport-grid button { height: 188px; border: 0; border-radius: 28px; background: #f7f3eb; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.transport-grid button.selected { background: #ede8df; }
-.transport-grid svg { width: 72px; height: 72px; margin-bottom: 12px; }
-.transport-grid span { font-size: 29px; font-weight: 900; }
-.buy-button { width: 100%; height: 108px; border: 0; border-radius: 54px; background: #546321; color: #fff; font-size: 34px; font-weight: 900; margin-top: 34px; }
-.search-box { height: 112px; margin-top: 58px; border: 2px solid #e2dcd2; border-radius: 58px; background: #fff; display: flex; align-items: center; padding: 8px 10px 8px 48px; }
-.search-box span { flex: 1; font-size: 28px; font-weight: 800; white-space: nowrap; }
-.search-box button { width: 112px; height: 92px; border: 0; border-radius: 42px; background: #546321; color: #fff; display: grid; place-items: center; }
-.search-box svg { width: 56px; }
-.bottom-nav { position: absolute; left: 0; right: 0; bottom: 24px; height: 136px; border-radius: 64px 64px 0 0; background: #fff; display: grid; grid-template-columns: repeat(4,1fr); padding: 18px 18px 12px; border: 1px solid #eee8df; }
-.bottom-nav button { border: 0; background: transparent; color: #4a3928; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
-.bottom-nav button.active { color: #546321; }
-.bottom-nav svg { width: 52px; height: 52px; }
-.bottom-nav span { font-size: 21px; font-weight: 900; }
-.home-indicator { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 310px; height: 9px; border-radius: 5px; background: #080b19; }
+.status-icons { z-index: 2; display: flex; align-items: center; gap: 14px; color: #080b19; font-size: 22px; }
+.battery { width: 52px; height: 28px; border: 4px solid #080b19; border-radius: 8px; }
+.back-button { width: 88px; height: 88px; margin: 34px 32px 0; border: 0; border-radius: 50%; background: #fff; color: #4a3928; box-shadow: 0 2px 4px rgba(74,57,40,.08); display: grid; place-items: center; }
+.back-button svg { width: 44px; }
+.passenger-content { padding: 0 32px; }
+.passenger-content h1 { margin: 38px 0 34px; text-align: center; font-size: 62px; line-height: .98; letter-spacing: -2px; }
+.passenger-content h1 span { color: #718b42; }
+.counter { width: 430px; height: 120px; margin: 0 auto 32px; background: #fff; border: 2px solid #ded8cf; border-radius: 62px; display: grid; grid-template-columns: 108px 1fr 108px; align-items: center; box-shadow: 0 5px 0 rgba(74,57,40,.12); }
+.counter button { width: 102px; height: 102px; border: 0; border-radius: 50%; background: #718b42; color: #fff; font-size: 62px; line-height: 1; margin: auto; }
+.counter strong { text-align: center; font-size: 58px; }
+.transport-tabs { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 0 0 18px; }
+.transport-tabs button { height: 50px; border: 0; border-radius: 25px; background: #ede8df; color: #4a3928; font-weight: 800; }
+.transport-tabs button.active { background: #718b42; color: #fff; }
+.purchase-card { margin-top: 20px; min-height: 430px; border-radius: 44px; background: #fff; border: 1px solid #eee8df; box-shadow: 0 4px 0 rgba(74,57,40,.05); overflow: hidden; }
+.summary-top { height: 180px; display: flex; align-items: center; justify-content: space-between; padding: 24px 38px 10px; }
+.summary-top h2 { margin: 0 0 28px; font-size: 52px; }
+.fare-row { display: flex; align-items: center; gap: 14px; }
+.fare-row b { font-size: 28px; }
+.fare-row strong { font-size: 25px; color: #fff; background: #718b42; border-radius: 28px; padding: 13px 20px; white-space: nowrap; }
+.vehicle { width: 260px; height: 150px; }
+.summary-lines { margin: 0 38px; border-bottom: 2px solid #d8d0c4; }
+.summary-lines div { display: flex; justify-content: space-between; font-size: 28px; padding: 10px 0; }
+.summary-lines strong { font-weight: 800; }
+.total-row { display: flex; justify-content: space-between; align-items: center; margin: 18px 38px 22px; }
+.total-row strong { font-size: 38px; }
+.total-row b { font-size: 36px; }
+.balance-change { display: grid; grid-template-columns: 1fr 34px 1fr; gap: 10px; margin: 0 38px 30px; align-items: center; }
+.balance-change div:not(.arrow) { border-radius: 28px; background: #f5efe5; height: 118px; padding: 22px 28px; display: flex; flex-direction: column; }
+.balance-change span { font-size: 24px; font-weight: 800; }
+.balance-change strong { font-size: 24px; margin-top: 8px; }
+.arrow { color: #718b42; font-size: 26px; text-align: center; }
+.purchase-actions { position: absolute; left: 30px; right: 30px; bottom: 34px; height: 112px; display: grid; grid-template-columns: 1fr 1fr; border-radius: 32px; overflow: hidden; }
+.purchase-actions button { border: 0; background: #63362a; color: #fff; font-size: 32px; font-weight: 900; }
+.purchase-actions button + button { border-left: 2px solid #fff; }
+.home-indicator { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 310px; height: 9px; border-radius: 5px; background: #080b19; }
 
 @media (max-width: 520px) {
-  .home { padding: 14px 28px 126px; }
-  .top-status { height: 64px; }
-  .time { font-size: 29px; }
+  .purchase-status { height: 88px; padding-inline: 28px; }
+  .purchase-status .time { font-size: 28px; }
   .status-island { width: 330px; height: 58px; top: 14px; }
-  .status-island::before { width: 34px; height: 34px; left: 30px; top: 12px; }
-  .status-icons { font-size: 30px; gap: 8px; }
-  .status-icons .battery { width: 42px; height: 24px; }
-  .welcome { margin-top: 40px; }
-  .welcome h1 { font-size: 48px; margin-bottom: 48px; }
-  .welcome p { font-size: 25px; }
-  .balance-row strong { font-size: 60px; }
-  .balance-row span { font-size: 24px; }
-  .add-button { width: 72px; height: 72px; font-size: 54px; margin-left: 8px; }
-  .mode-switch { margin-top: 48px; height: 104px; }
-  .mode-switch button { font-size: 24px; }
-  .ticket-card { margin-top: 48px; min-height: 520px; padding: 18px 22px 24px; }
-  .train { height: 150px; }
-  .ticket-card h2 { font-size: 34px; margin: 0 0 26px; }
-  .transport-grid { gap: 11px; }
-  .transport-grid button { height: 150px; }
-  .transport-grid svg { width: 58px; height: 58px; }
-  .transport-grid span { font-size: 24px; }
-  .buy-button { height: 82px; margin-top: 26px; font-size: 28px; }
-  .search-box { height: 92px; margin-top: 48px; padding-left: 36px; }
-  .search-box span { font-size: 22px; }
-  .search-box button { width: 92px; height: 74px; }
-  .bottom-nav { height: 116px; bottom: 18px; }
-  .bottom-nav svg { width: 44px; height: 44px; }
-  .bottom-nav span { font-size: 17px; }
-  .home-indicator { bottom: 8px; width: 250px; height: 7px; }
+  .status-icons { font-size: 16px; }
+  .battery { width: 42px; height: 24px; }
+  .back-button { width: 64px; height: 64px; margin: 20px 26px 0; }
+  .back-button svg { width: 34px; }
+  .passenger-content { padding: 0 26px; }
+  .passenger-content h1 { font-size: 48px; margin: 34px 0 28px; }
+  .counter { width: 330px; height: 108px; grid-template-columns: 96px 1fr 96px; }
+  .counter button { width: 92px; height: 92px; }
+  .counter strong { font-size: 48px; }
+  .purchase-card { min-height: 390px; }
+  .summary-top { height: 150px; padding: 18px 26px 8px; }
+  .summary-top h2 { font-size: 40px; margin-bottom: 20px; }
+  .fare-row b { font-size: 22px; }
+  .fare-row strong { font-size: 20px; padding: 10px 14px; }
+  .vehicle { width: 220px; }
+  .summary-lines { margin-inline: 28px; }
+  .summary-lines div { font-size: 22px; }
+  .total-row { margin: 14px 28px 18px; }
+  .total-row strong, .total-row b { font-size: 30px; }
+  .balance-change { margin-inline: 28px; }
+  .balance-change div:not(.arrow) { height: 94px; padding: 16px 18px; }
+  .balance-change span, .balance-change strong { font-size: 19px; }
+  .purchase-actions { height: 100px; }
+  .purchase-actions button { font-size: 26px; }
 }
 
 @media (max-width: 380px) {
-  .home { padding-inline: 18px; }
-  .welcome h1 { font-size: 42px; }
-  .search-box span { font-size: 18px; }
-  .mode-switch button { font-size: 20px; gap: 8px; }
-  .transport-grid span { font-size: 20px; }
+  .passenger-content { padding-inline: 18px; }
+  .counter { width: 300px; }
+  .purchase-card { border-radius: 34px; }
+  .summary-top { padding-inline: 20px; }
+  .vehicle { width: 180px; }
+  .summary-lines, .balance-change { margin-inline: 20px; }
+  .total-row { margin-inline: 20px; }
 }
